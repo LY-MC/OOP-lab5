@@ -33,7 +33,7 @@ public class Simulation {
 
     void printInCages() throws InterruptedException, IOException {
         Properties prop = new Properties();
-        FileInputStream ip = new FileInputStream("src/com/utm/config.properties");
+        FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/resources/config.properties");
         prop.load(ip);
         monkeyCage.populateCage(Integer.parseInt(prop.getProperty("numberOfMonkeys")), AnimalType.MONKEY);
         elephantCage.populateCage(Integer.parseInt(prop.getProperty("numberOfElephants")), AnimalType.ELEPHANT);
@@ -52,7 +52,7 @@ public class Simulation {
 
     void simulate(int timeStamp) throws InterruptedException, IOException {
         Properties prop = new Properties();
-        FileInputStream ip = new FileInputStream("src/com/utm/config.properties");
+        FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/resources/config.properties");
         prop.load(ip);
 
         System.out.println("Time " + timeStamp + ":00");
